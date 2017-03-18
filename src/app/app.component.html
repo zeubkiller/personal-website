@@ -24,6 +24,13 @@
 
   <md-tab-group>
     <md-tab label="Gallery">
+      <md-card *ngFor="let spaceScreen of spaceScreens; let i = index">
+        <img md-car-image src="{{ spaceScreen.img }}">
+        
+        <md-card-content>
+           <p>{{ spaceScreen.description }}</p>
+        </md-card-content>
+      </md-card>
     </md-tab>
     <md-tab label="Settings">
     </md-tab>
