@@ -1,0 +1,9 @@
+.demo-main {
+    padding-left: 16px;
+}
+
+.demo-content {
+    display: flex;
+    height: 100%;
+    box-sizing: border-box;
+}

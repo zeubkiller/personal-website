@@ -8,12 +8,9 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
-import { HeaderComponent } from './header/header.component';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
