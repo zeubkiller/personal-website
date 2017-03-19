@@ -7,10 +7,14 @@ import { AppComponent } from './app.component';
 
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
+import { MainMenuLeftComponent } from './main-menu-left/main-menu-left.component';
+import { MainContentOverviewComponent } from './main-content-overview/main-content-overview.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainMenuLeftComponent,
+    MainContentOverviewComponent
   ],
   imports: [
     BrowserModule,
