@@ -1,7 +1,3 @@
-//********************************************************* angular-cli.json *********************************************************
-// angular-cli.json file contains configurations related to it’s functioning. 
-// Like what is the root folder, where to save the out files, which is the default index file, and so on.
-
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {

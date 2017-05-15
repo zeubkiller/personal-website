@@ -1,7 +1,3 @@
-//************************ tslint.js ************************ 
-//TSLint checks your TypeScript code for readability, maintainability, and functionality errors. 
-// tslint.json file is used to configure which rules should run.
-
 {
   "rulesDirectory": [
     "node_modules/codelyzer"
