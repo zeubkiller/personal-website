@@ -1,3 +1,9 @@
+//********************************************************** polyfill.ts **********************************************************
+// A polyfill is a browser fallback, made in JavaScript, that allows functionality 
+// you expect to work in modern browsers to work in older browsers, e.g., to support canvas (an HTML5 feature) in older browsers. 
+// polyfills.ts is used to list them.
+
+
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.
