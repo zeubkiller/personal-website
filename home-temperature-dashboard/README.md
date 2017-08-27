@@ -1,10 +1,10 @@
 # HomeTemperatureDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
 ## Development server
+Run `ng install` to install all node modules, if it's failing check you are in administrator (go cmd, run as administrator) and also disable the antivirus and other software that can lock the folder while installing (https://github.com/npm/npm/issues/10826).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
