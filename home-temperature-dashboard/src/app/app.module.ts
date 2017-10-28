@@ -12,13 +12,13 @@ import {
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { SensorComponent } from './components/sensor/sensor.component';
+import { SensorBasicDisplayComponent } from './components/sensor/sensor.display.basic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    SensorComponent
+    SensorBasicDisplayComponent,
   ],
   imports: [
     BrowserModule,
