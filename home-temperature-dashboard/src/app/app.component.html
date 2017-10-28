@@ -1,9 +1,6 @@
 <div>
-  <app-menu></app-menu>
+  <home-sensor-menu></home-sensor-menu>
   <mat-card>
-    <div id="heat-sensor">
-        <div class="temperature-sensor">{{temperature}}°c</div>
-        <p>Current temperature</p>
-    </div>
+    <home-sensor-sensor-display-basic [value]="42" [unit]="'C'"></home-sensor-sensor-display-basic>
   </mat-card>
 </div>
