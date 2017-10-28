@@ -11,12 +11,14 @@ import {
  } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { SensorComponent } from './components/sensor/sensor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    SensorComponent
   ],
   imports: [
     BrowserModule,
