@@ -102,3 +102,6 @@ ENV/
 
 #Pycharm hidden folder
 .idea/
+
+#Visual studio code specific
+.vscode/
