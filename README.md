@@ -1,13 +1,13 @@
 Project to test the Flask package
 
-::: How to run :::
+#::: How to run :::
 
-#Use this to set up the entry file
+##Use this to set up the entry file
 export FLASK_APP=***.py
 
-#THen to launch the server
+##Then to launch the server
 flask run
 
-#To set up the debug mode
+##To set up the debug mode
 export FLASK_ENV=development
 
