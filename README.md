@@ -2,16 +2,32 @@
 
 Personal website served with a flask server
 
+## Classic command
+
+### Conda
+
+List all environments
+
+```sh
+conda info -e
+```
+
+Activate an environment
+
+```sh
+conda activate ***
+```
+
 ## How to run
 
-* Assign the entry point of your server to the FLASK_APP variable
+1. Assign the entry point of your server to the FLASK_APP variable
 On linux:
 
 ```sh
 export FLASK_APP=***.py
 ```
 
-* Then to launch the server
+2. Then to launch the server
 
 ```sh
 flask run
