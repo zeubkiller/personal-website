@@ -17,7 +17,11 @@ export FLASK_APP=***.py
 flask run
 ```
 
-### Specific command
+## Folder structure
+Everything about the server code should be in the app/ folder.
+Each folder should contain a __init__.py file.
+
+## Specific command
 
 1. To set up the debug mode
 
