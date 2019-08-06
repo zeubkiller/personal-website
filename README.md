@@ -2,21 +2,13 @@
 
 Personal website served with a flask server
 
-## Classic command
+## How to install the dev environment
 
-### Conda
+This project work with Flask and Python 3.7.
 
-List all environments
-
-```sh
-conda info -e
-```
-
-Activate an environment
-
-```sh
-conda activate ***
-```
+1. You can install and download conda or miniconda.
+2. Create a new environment with Python 3.7 then install pip
+3. Use the requirements.txt to install all the python dependencies
 
 ## How to run
 
@@ -40,8 +32,26 @@ flask run
 
 ## Specific command
 
+### Project command
+
 * To set up the debug mode
 
 ```sh
 export FLASK_ENV=development
+```
+
+### Basic command
+
+#### Conda
+
+List all environments
+
+```sh
+conda info -e
+```
+
+Activate an environment
+
+```sh
+conda activate ***
 ```
