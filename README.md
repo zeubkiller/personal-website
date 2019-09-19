@@ -25,6 +25,8 @@ export FLASK_APP=***.py
 flask run
 ```
 
+Carefull the entry point of the flask module will be where you launch this method. It can have impact on the folder path.
+
 ## Folder structure
 
 * Everything about the server code should be in the app/ folder.
