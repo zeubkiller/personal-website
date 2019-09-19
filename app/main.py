@@ -8,4 +8,3 @@ app.config['EXPLAIN_TEMPLATE_LOADING']=True
 def hello():
     user = {"username" : "George"}
     return render_template('index.html', title="Home", user=user)
-
