@@ -8,8 +8,8 @@
     </head>
     <body>
         <div>GeorgeLand: 
-          <a href="/index">Home</a>
-          <a href="/login">Login</a>
+          <a href="{{url_for('index')}}">Home</a>
+          <a href="{{url_for('loggin')}}">Login</a>
           <hr>
         </div>
         {% with messages = get_flashed_messages() %}
@@ -21,7 +21,7 @@
         </ul>
         {% endif %}
         {% endwith %}
-        
+
         {% block content %}{% endblock %}
     </body>
 </html>
