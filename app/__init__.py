@@ -15,6 +15,7 @@ serverApp.debug = True
 database_instance = SQLAlchemy(serverApp)
 migrate_instance = Migrate(serverApp, database_instance)
 
-login = LoginManager(serverApp) 
+login = LoginManager(serverApp)
+login.login_view = "login"
 
 from app import routes, models
