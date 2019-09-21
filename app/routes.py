@@ -4,8 +4,8 @@ from werkzeug.urls import url_parse
 
 from flask_login import current_user, login_user, logout_user, login_required
 
-from app import serverApp
-from app.forms import LoginForm
+from app import serverApp, database_instance
+from app.forms import LoginForm, RegistrationForm
 from app.models import User
 
 @serverApp.route("/")
@@ -30,15 +30,33 @@ def login():
         login_user(user, remember=form.remember_me.data)
 
         next_page = request.args.get("next")
-        print(next_page)
         if not next_page or url_parse(next_page).netloc != '': #Will check if the next argument is empty or if the next argument redirect to an external webpage
-            next_page = redirect(url_for("index"))
+            next_page = url_for("index")
 
         return redirect(next_page)
 
-    return render_template('login.html', title='Sign In', form=form, user=current_user)
+    return render_template('login.html', title='Sign In', form=form)
 
 @serverApp.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for("index"))
+
+
+@serverApp.route("/register",  methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for("index"))
+    
+    register_form = RegistrationForm()
+
+    if register_form.validate_on_submit():
+        new_user = User(username=register_form.username.data, email=register_form.email.data)
+        new_user.set_password_hash(register_form.password.data)
+        database_instance.session.add(new_user)
+        database_instance.session.commit()
+
+        flash("Congratulation you are a new user")
+        return redirect(url_for("login"))
+
+    return render_template('register.html', title="Register", form=register_form)
