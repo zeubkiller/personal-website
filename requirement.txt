@@ -3,6 +3,7 @@ astroid==2.2.5
 certifi==2019.6.16
 Click==7.0
 Flask==1.1.1
+Flask-Login==0.4.1
 Flask-Migrate==2.5.2
 Flask-SQLAlchemy==2.4.0
 Flask-WTF==0.14.2
