@@ -9,8 +9,11 @@
     <body>
         <div>GeorgeLand: 
           <a href="{{url_for('index')}}">Home</a>
+          {% if user.is_anonymous %}
           <a href="{{url_for('login')}}">Login</a>
-          <a href="{{url_for('logout')}}">Login</a>
+          {% else %}
+          <a href="{{url_for('logout')}}">Logout</a>
+          {% endif %}
           <hr>
         </div>
         {% with messages = get_flashed_messages() %}
