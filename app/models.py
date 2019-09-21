@@ -1,9 +1,12 @@
 from datetime import datetime
+
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app import database_instance
+from flask_login import UserMixin
 
-class User(database_instance.Model):
+from app import database_instance, login
+
+class User(UserMixin, database_instance.Model):
     id = database_instance.Column(database_instance.Integer, primary_key=True)
     username = database_instance.Column(database_instance.String(64), index=True, unique=True)
     email = database_instance.Column(database_instance.String(120), index=True, unique=True)
@@ -19,6 +22,10 @@ class User(database_instance.Model):
     def is_password_ok(self, current_password):
         return check_password_hash(self.password_hash, current_password)
 
+
+@login.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class Post(database_instance.Model):
     id = database_instance.Column(database_instance.Integer, primary_key=True)
