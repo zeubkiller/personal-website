@@ -6,8 +6,11 @@
   {% else %}
     <title>Welcome to GeorgeLand</title>
   {% endif %}
-{% endblock %}
+{% endblock title%}
 {% block navbar %}
+
+{% import 'navbar_maccro.html' as navmaccro %}
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -15,21 +18,20 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li role="presentation"><a href="{{url_for('index')}}">Home</a></li>
+        {{ navmaccro.nav_link('index','Home') }}
         {% if current_user.is_anonymous %}
-          <li role="presentation" class="active"><a href="{{url_for('login')}}">Login</a></li>
-          <li role="presentation"><a href="{{url_for('register')}}">Register</a></li>
+          {{ navmaccro.nav_link('login','Login') }}
+          {{ navmaccro.nav_link('register','Register') }}
         {% else %}
-          <li role="presentation"><a href="{{url_for('logout')}}">Logout</a></li>
+          {{ navmaccro.nav_link('logout','Logout') }}
         {% endif %}
       </ul>
   </div>
   </div>
 </nav>
-{% endblock%}
+{% endblock navbar%}
 {% block content %}
-  {% block app_content %}{% endblock %}
-</hr>
+  {% block app_content %}{% endblock app_content%}
   {% with messages = get_flashed_messages() %}
   {% if messages %}
   <ul>
@@ -39,4 +41,4 @@
   </ul>
   {% endif %}
   {% endwith %}
-{% endblock %}
+{% endblock content%}
