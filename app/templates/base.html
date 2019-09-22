@@ -2,33 +2,41 @@
 
 {% block title %}
   {% if title %}
-  <title>{{ title }} - GeorgeLand</title>
+    <title>{{ title }} - GeorgeLand</title>
   {% else %}
-  <title>Welcome to GeorgeLand</title>
+    <title>Welcome to GeorgeLand</title>
   {% endif %}
 {% endblock %}
 {% block navbar %}
-    <div>GeorgeLand: 
-      <a href="{{url_for('index')}}">Home</a>
-      {% if current_user.is_anonymous %}
-      <a href="{{url_for('login')}}">Login</a>
-      <a href="{{url_for('register')}}">Register</a>
-      {% else %}
-      <a href="{{url_for('logout')}}">Logout</a>
-      {% endif %}
-      <hr>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p>GeorgeLand</p>
     </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li role="presentation"><a href="{{url_for('index')}}">Home</a></li>
+        {% if current_user.is_anonymous %}
+          <li role="presentation" class="active"><a href="{{url_for('login')}}">Login</a></li>
+          <li role="presentation"><a href="{{url_for('register')}}">Register</a></li>
+        {% else %}
+          <li role="presentation"><a href="{{url_for('logout')}}">Logout</a></li>
+        {% endif %}
+      </ul>
+  </div>
+  </div>
+</nav>
 {% endblock%}
 {% block content %}
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-      {% for message in messages %}
-      <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-
-    {% block app_content %}{% endblock %}
+  {% block app_content %}{% endblock %}
+</hr>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <div class="alert alert-danger" role="alert">{{message}}</div>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
 {% endblock %}
