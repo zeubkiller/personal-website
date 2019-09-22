@@ -20,10 +20,10 @@
       <ul class="nav navbar-nav">
         {{ navmaccro.nav_link('index','Home') }}
         {% if current_user.is_anonymous %}
-          {{ navmaccro.nav_link('login','Login') }}
-          {{ navmaccro.nav_link('register','Register') }}
+          {{ navmaccro.nav_link('authentification.login','Login') }}
+          {{ navmaccro.nav_link('authentification.register','Register') }}
         {% else %}
-          {{ navmaccro.nav_link('logout','Logout') }}
+          {{ navmaccro.nav_link('authentification.logout','Logout') }}
         {% endif %}
       </ul>
   </div>
