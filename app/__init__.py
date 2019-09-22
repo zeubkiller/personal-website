@@ -6,8 +6,8 @@ from logging.handlers import RotatingFileHandler
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
 
 from app.configurations import ServerConfiguration
 
@@ -32,5 +32,7 @@ migrate_instance = Migrate(serverApp, database_instance)
 
 login = LoginManager(serverApp)
 login.login_view = "login"
+
+bootstrap = Bootstrap(serverApp)
 
 from app import routes, models, errors
