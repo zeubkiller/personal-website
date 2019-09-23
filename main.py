@@ -1,7 +1,7 @@
 
 from app import serverApp
 from app.application import database_instance
-from app.authentification.models import User, Post
+from app.database.user_model import User, Post
 
 @serverApp.shell_context_processor
 def make_shell_context():

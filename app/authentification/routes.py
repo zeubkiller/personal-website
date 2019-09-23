@@ -7,7 +7,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.application import database_instance
 from app.authentification import auth_bp
 from app.authentification.forms import LoginForm, RegistrationForm
-from app.authentification.models import User
+from app.database.user_model import User
 
 @auth_bp.route("/login", methods=['GET', 'POST'])
 def login():
