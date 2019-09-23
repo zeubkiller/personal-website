@@ -25,4 +25,8 @@ bootstrap = Bootstrap(serverApp)
 from app.authentification import auth_bp
 serverApp.register_blueprint(auth_bp)
 
-from app import routes, models, errors
+from app.error import error_bp
+serverApp.register_blueprint(error_bp)
+
+from app.main import main_bp
+serverApp.register_blueprint(main_bp)

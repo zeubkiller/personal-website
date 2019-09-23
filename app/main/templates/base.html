@@ -18,7 +18,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {{ navmaccro.nav_link('index','Home') }}
+        {{ navmaccro.nav_link('main.index','Home') }}
         {% if current_user.is_anonymous %}
           {{ navmaccro.nav_link('authentification.login','Login') }}
           {{ navmaccro.nav_link('authentification.register','Register') }}

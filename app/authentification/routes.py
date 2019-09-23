@@ -6,13 +6,13 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 from app import database_instance
 from app.authentification import auth_bp
-from app.forms import LoginForm, RegistrationForm
-from app.models import User
+from app.authentification.forms import LoginForm, RegistrationForm
+from app.authentification.models import User
 
 @auth_bp.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for("index"))
+        return redirect(url_for("main.index"))
     
     form = LoginForm()
     if form.validate_on_submit():
@@ -25,7 +25,7 @@ def login():
 
         next_page = request.args.get("next")
         if not next_page or url_parse(next_page).netloc != '': #Will check if the next argument is empty or if the next argument redirect to an external webpage
-            next_page = url_for("index")
+            next_page = url_for("main.index")
 
         return redirect(next_page)
 
@@ -34,13 +34,13 @@ def login():
 @auth_bp.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for("index"))
+    return redirect(url_for("main.index"))
 
 
 @auth_bp.route("/register",  methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for("index"))
+        return redirect(url_for("main.index"))
     
     register_form = RegistrationForm()
 
