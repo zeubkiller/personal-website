@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from flask_login import UserMixin
 
-from app import database_instance, login
+from app.application import database_instance, login
 
 class User(UserMixin, database_instance.Model):
     id = database_instance.Column(database_instance.Integer, primary_key=True)
