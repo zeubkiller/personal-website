@@ -4,7 +4,7 @@ from werkzeug.urls import url_parse
 
 from flask_login import current_user, login_user, logout_user, login_required
 
-from app import database_instance
+from app.application import database_instance
 from app.authentification import auth_bp
 from app.authentification.forms import LoginForm, RegistrationForm
 from app.authentification.models import User
