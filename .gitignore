@@ -105,3 +105,6 @@ ENV/
 
 #Visual studio code specific
 .vscode/
+
+#Database specific
+app/app.db

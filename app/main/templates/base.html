@@ -1,0 +1,48 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+  {% if title %}
+    <title>{{ title }} - GeorgeLand</title>
+  {% else %}
+    <title>Welcome to GeorgeLand</title>
+  {% endif %}
+{% endblock title%}
+{% block navbar %}
+
+{% import 'navbar_maccro.html' as navmaccro %}
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p>GeorgeLand</p>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{ navmaccro.nav_link('main.index','Home') }}
+        {% if current_user.is_anonymous %}
+          {{ navmaccro.nav_link('authentification.login','Login') }}
+          {{ navmaccro.nav_link('authentification.register','Register') }}
+        {% else %}
+          {{ navmaccro.nav_link('authentification.logout','Logout') }}
+        {% endif %}
+      </ul>
+  </div>
+  </div>
+</nav>
+{% endblock navbar%}
+{% block content %}
+  {% block app_content %}{% endblock app_content%}
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <br>
+  <ul>
+    {% for message in messages %}
+    <div class="alert alert-danger" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
+      <p>{{message}}</p>
+    </div>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+{% endblock content%}
